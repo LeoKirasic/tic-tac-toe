@@ -1,0 +1,12 @@
+#gameboard {
+    display: grid;
+    grid-template-rows: 150px 150px 150px;
+    grid-template-columns: 150px 150px 150px;
+}
+.box {
+    border: 1px solid #555;
+}
+body {
+    display: flex;
+    justify-content: center;
+  }
