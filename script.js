@@ -11,15 +11,34 @@ const Gameboard = (() =>{
             box.textContent = gameBoard[i];
             box.classList.add('box');
             box.addEventListener('click', function(e) {
-                e.target.textContent = 'X';
+                if(e.target.textContent === '') {
+                e.target.textContent = alternateMark();
                 addMark(gameBoard, this.id);
+                } else {
+                   console.log('illegal move');
+                }
             });
             container.appendChild(box);
         }
     }
 
+    let counter = 0;
+
+    const alternateMark = () => {
+        if (Number.isInteger(counter / 2)) {
+            return 'X';
+        } else {
+            return 'O';
+        }
+    }
+
     const addMark = (array, position) => {
-        array.splice(position, 1, 'X');
+            if (Number.isInteger(counter / 2)) {
+             array.splice(position, 1, 'X');
+            } else {
+             array.splice(position, 1, 'O');
+            }
+            counter++;
     }
     renderContent();
     return {
