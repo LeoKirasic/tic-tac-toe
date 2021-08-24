@@ -98,7 +98,7 @@ const Gameboard = (() =>{
                     const winnerDisplay = document.createElement('div');
                     winnerDisplay.classList.add('winner-display');
                     winnerDisplay.textContent = `Draw!`;
-                    bodyDiv.appendChild(winnerDisplay);
+                    title.appendChild(winnerDisplay);
                     break;
                 } else {
                     console.log('Game ongoing');
